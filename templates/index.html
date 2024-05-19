@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" type="text/css" href="/static/css/styles.css" />
 <head>
-    <div id="title">
-	    <h1 class="h1">1818 Charity</h1>
-    </div>
     <meta charset="UTF-8">
-	<title>Product Catalog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <title>Product Catalog</title>
 </head>
 <body>
-	<ul class="product-list">
-		{% for product in products %}
-			<li class="product-item">
-				<a href="{% url 'product_detail' product.pk %}">
-					<img src="{{ product.image.url }}" alt="{{ product.name }}" width="100">
-				</a>
+    <div id="title">
+        <h1 class="h1">1818 Charity</h1>
+    </div>
+
+    <ul class="product-list desktop-display mobile-display">
+        {% for product in products %}
+            <li class="product-item">
+                <a href="{% url 'product_detail' product.pk %}">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
                 <p class="text">{{ product.name }}</p>
-			</li>
-		{% endfor %}
-	</ul>
-    <br>
-    <br>
+            </li>
+        {% endfor %}
+    </ul>
+
     <div id="social-media">
-	    <br>
-	    <a href="https://www.instagram.com/1818charity">
-		    <img class="instagram-icon" src="/static/images/ig.png" alt="Instagram"/>
-	    </a>
-	    <br>
+        <a href="https://www.instagram.com/1818charity">
+            <img class="instagram-icon" src="/static/images/ig.png" alt="Instagram">
+        </a>
     </div>
 </body>
 </html>

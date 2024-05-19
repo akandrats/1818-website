@@ -2,7 +2,6 @@
 	font-family: 'Power Grotesk';
 	font-size: 48px;
 	text-align: center;
-	font-weight: normal;
 }
 .error-text {
 	font-family: 'Neue Haas Grotesk Text';
@@ -16,9 +15,10 @@
 	width: 30px;
 	height: 30px;
 	position: fixed;
-    bottom: 40px;
+	bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
+	background-color: #FFFFFF;
 }
 
 .marquee-text {
@@ -35,11 +35,9 @@
 }
 
 .product-list {
-	padding-left: 400px;
-	padding-right: 400px;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	list-style: none;
 }
 
@@ -69,8 +67,11 @@
 .text-details {
 	display: flex;
 	align-items: center;
-	padding-left: 400px;
-	padding-right: 400px;
+	text-align: center;
+	justify-content: space-evenly;
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
 }
 
 .text-details h3,
@@ -80,7 +81,6 @@
 }
 
 .text-details .text {
-	flex: 1;
 	padding-right: 20px;
 }
 
@@ -96,4 +96,45 @@
 	max-height: 320px;
 	margin: 0 auto; /
 	display: block;
+}
+
+@media (max-width: 480px) {
+    .text-details {
+        flex-direction: column;
+    }
+
+    .product-item {
+        max-width: 100%;
+    }
+
+    .desktop-display {
+        display: none;
+    }
+
+    .mobile-display {
+        display: block;
+        margin-inline-start: 30px;
+        margin-inline-end: 30px;
+    }
+}
+
+@media (min-width:481px) {
+    .text-details {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .text-details .text {
+        padding-right: 20px;
+    }
+
+	.mobile-display {
+        display: none;
+    }
+
+    .desktop-display {
+        display: block;
+        margin-inline-start: 100px;
+        margin-inline-end: 100px;
+    }
 }
