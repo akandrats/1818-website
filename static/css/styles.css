@@ -74,6 +74,14 @@
 	margin: 0 auto;
 }
 
+.back-button-text{
+	text-align: center;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
 .text-details h3,
 .text-details h2,
 .text-details p {
@@ -133,7 +141,7 @@
     }
 
     .desktop-display {
-        display: block;
+        display: flex;
         margin-inline-start: 100px;
         margin-inline-end: 100px;
     }
